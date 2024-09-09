@@ -76,6 +76,7 @@ public class Decode{
            
         }
         System.out.println(dp[n.length()]);
+        sc.close();
         
     }
     public int rec(int[] dp, String n, int i){

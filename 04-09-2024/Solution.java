@@ -65,5 +65,6 @@ public class Solution{
         res.add(start);
         res.add(end);
         System.out.println(res);
+        sc.close();
     }
 }
