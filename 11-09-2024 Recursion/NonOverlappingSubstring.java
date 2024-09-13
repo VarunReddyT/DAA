@@ -41,6 +41,28 @@
 // {k}{m}{it}
 // {k}{m}{i}{t}
 
-public class Solution4 {
-    
+import java.util.*;
+
+public class NonOverlappingSubstring{
+    static public void comb(String s,ArrayList<String> arr, String temp){
+        if(s.length()==0){
+            arr.add(temp);
+            return;
+        }
+        for(int i = 1;i<=s.length();i++){
+            String left = s.substring(0,i);
+            String right = s.substring(i);
+            comb(right,arr,temp+'{'+left+'}');
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String inp = sc.next();
+        ArrayList<String> arr = new ArrayList<String>();
+        comb(inp,arr,"");
+        for(int i = arr.size()-1;i>=0;i--){
+            System.out.println(arr.get(i));
+        }
+        sc.close();
+    }
 }
