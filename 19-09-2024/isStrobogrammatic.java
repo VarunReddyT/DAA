@@ -7,7 +7,7 @@ public class isStrobogrammatic {
     // }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        // int n = sc.nextInt();
         HashMap<Character,Character> map = new HashMap<Character,Character>();
         map.put('0', '0');
         map.put('1','1');
