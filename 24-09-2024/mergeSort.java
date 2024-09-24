@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class mergeSort{
 
     public static void merge(int[] arr, int low, int high){
@@ -48,11 +48,16 @@ public class mergeSort{
         }
     }
     public static void main(String[] args){
-        int[] arr = {34,2,542,2,4,56,8};
-        int n = 7;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
         merge_sort(arr,0,n-1);
         for(int i = 0;i<n;i++){
             System.out.print(arr[i] + " ");
         }
+        sc.close();
     }
 }
