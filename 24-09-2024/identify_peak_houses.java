@@ -73,7 +73,33 @@
 // The houses 9 and 10 are peaks since they are greater than their immediate neighbors.
 
 
+import java.util.*;
+public class identify_peak_houses{
+    List<Integer> result = new ArrayList<>();
+    private void divide(int[] arr, int low , int high){
+        if(low<=high){
+            int mid = (low+high)/2;
+            boolean GreaterThanLeft = (mid==0) || (arr[mid]>arr[mid-1]);
+            boolean GreaterThanRight = (mid==arr.length-1) || (arr[mid]>arr[mid+1]);
+            if(GreaterThanLeft && GreaterThanRight){
+                result.add(arr[mid]);
+            }
+            divide(arr,low,mid-1);
+            divide(arr,mid+1,high);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        identify_peak_houses ph = new identify_peak_houses();
+        ph.divide(arr, 0, n-1);
+        Collections.sort(ph.result);
+        System.out.println(ph.result);
 
-public class identify_peak_houses {
-    
+        sc.close();
+    }
 }

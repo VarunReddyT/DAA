@@ -49,20 +49,40 @@
 
 import java.util.*;
 
-public class maxSubArray {
-
-    public static void subarray(int[] arr){
-        
-    }
-
-    public static void main(String[] args) {
+public class max_sub_array{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n];
-
         for(int i = 0;i<n;i++){
             arr[i] = sc.nextInt();
         }
+        System.out.println(maxSub(arr,0,n-1));
         sc.close();
+    }
+     public static int maxSub(int[] points, int left, int right) {
+        if (left == right) {
+            return points[left];
+        }
+        int mid = (left + right) / 2;
+        int leftMax = maxSub(points, left, mid);
+        int rightMax = maxSub(points, mid + 1, right);
+        int crossMax = maxCrossingSubArray(points, left, mid, right);
+        return Math.max(Math.max(leftMax, rightMax), crossMax);
+    }
+    public static int maxCrossingSubArray(int[] points, int left, int mid, int right) {
+        int leftSum = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = mid; i >= left; i--) {
+            sum += points[i];
+            leftSum = Math.max(leftSum, sum);
+        }
+        int rightSum = Integer.MIN_VALUE;
+        sum = 0;
+        for (int i = mid + 1; i <= right; i++) {
+            sum += points[i];
+            rightSum = Math.max(rightSum, sum);
+        }
+        return leftSum + rightSum;
     }
 }
