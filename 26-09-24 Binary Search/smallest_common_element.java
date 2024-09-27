@@ -1,5 +1,5 @@
 import java.util.*;
-public class smallestCommonElem {
+public class smallest_common_element{
 
     public static int binarySearch(int[] arr, int target, int low, int high){
         int left = low;
@@ -30,6 +30,7 @@ public class smallestCommonElem {
             }
         }
 
+        boolean flag = false;
         for(int i = 0;i<m;i++){
             int count = 0;
             for(int j = 1;j<n;j++){
@@ -38,9 +39,13 @@ public class smallestCommonElem {
                 }
             }
             if(count == n-1){
-                System.out.println("Most Common Element : " + mat[0][i]);
+                System.out.println(mat[0][i]);
+                flag = true;
                 break;
             }
+        }
+        if(!flag){
+            System.out.println(-1);
         }
 
         sc.close();
