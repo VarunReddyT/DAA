@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class quick_sort {
+public class quick_sort_SP {
     static int partition_low(int[] arr, int low, int high){
         int pivot = arr[low];
         int k = high;

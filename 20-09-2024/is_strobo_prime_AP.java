@@ -49,7 +49,7 @@
 
 import java.util.*;
 
-public class is_strobo_prime{
+public class is_strobo_prime_AP{
     static public boolean isStrobo(HashMap<Character,Character> map,String s, int i, int j){
         if(i>j){
             return true;

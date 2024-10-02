@@ -32,7 +32,7 @@
 // False
 import java.util.*;
 
-public class palindrome_recursion{
+public class palindrome_recursion_AP{
     public static boolean isPalindrome(String word, int i, int j){
         return helper(word,i,j);
     }

@@ -58,6 +58,32 @@
 // All characters are already 'O', so no move is needed.
 // Thus, the result is 0.
 
-public class minmoves {
-    
+import java.util.*;
+
+public class min_moves_AP{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int count = 0;
+        int n = s.length();
+        for(int i = 0;i<n;i++){
+            if(i < n-3 && s.charAt(i) == 'X'){
+                    count++;
+                    i+=2;
+            }
+            else if(i == n-2){
+                if(s.charAt(i) == 'X'){
+                    count++;
+                    i+=1;
+                }
+            }
+            else if(i == n-1){
+                if(s.charAt(i) == 'X'){
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+        sc.close();
+    }
 }

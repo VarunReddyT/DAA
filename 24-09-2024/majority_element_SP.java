@@ -1,5 +1,5 @@
 import java.util.*;
-public class majority_element {
+public class majority_element_SP {
     public static void main(String[] args) {
         HashMap<Integer,Integer> freq = new HashMap<>();
         int[] arr = {3,2,3,2,1,3,3,3};

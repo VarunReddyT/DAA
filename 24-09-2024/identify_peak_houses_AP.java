@@ -74,7 +74,7 @@
 
 
 import java.util.*;
-public class identify_peak_houses{
+public class identify_peak_houses_AP{
     List<Integer> result = new ArrayList<>();
     private void divide(int[] arr, int low , int high){
         if(low<=high){
@@ -95,7 +95,7 @@ public class identify_peak_houses{
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        identify_peak_houses ph = new identify_peak_houses();
+        identify_peak_houses_AP ph = new identify_peak_houses_AP();
         ph.divide(arr, 0, n-1);
         Collections.sort(ph.result);
         System.out.println(ph.result);

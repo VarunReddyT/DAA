@@ -64,7 +64,7 @@
 // Koko can eat all bananas in 6 hours with a speed of k = 23.
 
 import java.util.*;
-public class koko_eating_bananas{
+public class koko_eating_bananas_SP{
     public static int binarySearch(int[] arr, int hours){
         int left = 1;
         int right = 1;

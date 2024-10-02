@@ -69,7 +69,7 @@
 
 import java.util.*;
 
-public class perfect_square{
+public class perfect_square_AP{
     public static boolean binarySearch(long n){
         long left = 0;
         long right = n;

@@ -69,7 +69,7 @@
 
 import java.util.*;
 
-public class staircase{
+public class staircase_AP{
     public static long binarySearch(long n){
         long left = 0;
         long right = n;

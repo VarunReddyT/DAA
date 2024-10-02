@@ -1,5 +1,5 @@
 import java.util.*;
-public class mergeSort{
+public class mergeSort_SP{
 
     public static void merge(int[] arr, int low, int high){
         int mid = (low+high)/2;

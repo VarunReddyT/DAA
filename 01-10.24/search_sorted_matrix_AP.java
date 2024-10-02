@@ -55,7 +55,7 @@
 
 import java.util.*;
 
-public class search_sorted_matrix{
+public class search_sorted_matrix_AP{
     public static int binarySearchEnd(int[][] arr, int target){
         int left = 0;
         int right = arr.length-1;

@@ -1,5 +1,5 @@
 import java.util.*;
-public class palindrome_recursion_2 {
+public class palindrome_recursion_2_AP {
     public static String check(String subWord, int len, int cur){
         if(cur == len){
             return "";

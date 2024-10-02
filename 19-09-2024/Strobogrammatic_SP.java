@@ -7,8 +7,7 @@
 // 	8 rotates to 8
 // 	9 rotates to 6
 
-// Given an integer n, print all prime strobogrammatic numbers that are of length n 
-// and print smallest and largest strobogrammatic numbers of length n.
+// Given an integer n, return all strobogrammatic numbers that are of length n.
 
 // Input Format:
 // -------------
@@ -16,8 +15,7 @@
 
 // Output Format:
 // --------------
-// Line-1: Return a list of all prime strobogrammatic numbers of length n.
-// Line-2: Space separated two values, smallest and largest strobogrammatic numbers of length n.
+// line-1: Return a list of all strobogrammatic numbers of length n. The list can be in any order.
 
 // Constraints:
 // ------------
@@ -30,31 +28,34 @@
 
 // Sample Output-1: 
 // ----------------
-// [11]
-// 11 96
+// [11, 69, 88, 96]
 
+// Explanation:
+// -------------
+// All valid strobogrammatic numbers of length 2 are:
+// 11: Rotates to 11
+// 69: Rotates to 96
+// 88: Rotates to 88
+// 96: Rotates to 69
 
 // Sample Input-2:
 // ---------------
-// 5
+// 1
 
 // Sample Output-2: 
 // ----------------
-// [16091, 18181, 19861, 61819]
-// 10001 99866
+// [0, 1, 8]
 
-// Sample Input-3:
-// ---------------
-// 4
-
-// Sample Output-3: 
-// ----------------
-// []
-// 1001 9966
+// Explanation:
+// ------------
+// The strobogrammatic numbers of length 1 are:
+// 0: Rotates to 0
+// 1: Rotates to 1
+// 8: Rotates to 8
 
 // NOTE: Print the results in sorted order to pass the testcases
 import java.util.*;
-public class prime_strobogrammatic{
+public class Strobogrammatic_SP{
 
     static char[][] digitPair = {{'1','1'},{'8','8'},{'6','9'},{'9','6'}};
     public static ArrayList<String> isStrobogrammatic(int n){
@@ -82,34 +83,12 @@ public class prime_strobogrammatic{
         }
         return res;
     }
-
-    public static boolean is_prime(int n){
-        if(n<2){
-            return false;
-        }
-        for(int i = 2;i<=Math.sqrt(n);i++){
-            if(n%i == 0){
-                return false;
-            }
-        }
-        return true;
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         ArrayList<String> out = isStrobogrammatic(n);
-        
         Collections.sort(out);
-        ArrayList<String> res = new ArrayList<String>();
-        for(int i = 0;i<out.size();i++){
-            if(is_prime(Integer.parseInt(out.get(i)))){
-                res.add(out.get(i));
-            }
-        }
-        
-        System.out.println(res);
-
-        System.out.print(out.get(0) + " " + out.get(out.size()-1));
+        System.out.println(out);
 
         sc.close();
     }

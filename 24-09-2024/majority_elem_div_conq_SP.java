@@ -1,5 +1,5 @@
 import java.util.*;
-public class majority_elem_div_conq {
+public class majority_elem_div_conq_SP {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -43,6 +43,6 @@
 // Explanation:
 // The best way to split nums into two subarrays is [1, 2, 3] and [4, 5], where the largest sum is 9.
 
-public class split_array {
+public class split_array_AP {
     
 }

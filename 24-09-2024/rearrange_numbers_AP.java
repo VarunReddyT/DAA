@@ -35,7 +35,7 @@
 // [-4, -4, -5, -6, 5, 3, 2, 1]
 
 import java.util.*;
-public class rearrange_numbers{
+public class rearrange_numbers_AP{
     static public void arrange(int[] arr, int low, int high){
         int i = 0, j = 0, k = low;
         int mid = (low+high)/2;
