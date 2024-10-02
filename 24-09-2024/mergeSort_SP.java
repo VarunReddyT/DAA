@@ -1,3 +1,46 @@
+// You are given an unsorted array of integers. 
+// Your task is to implement the MergeSort algorithm to sort the array in ascending order.
+
+// MergeSort is a divide-and-conquer algorithm that:
+// 	-Divides the array into two halves.
+// 	-Recursively sorts the two halves.
+// 	-Merges the two sorted halves to produce the final sorted array.
+// 	-Your task is to write a function that sorts the given array using MergeSort.
+
+// Input Format:
+// --------------
+// Line-1: An integer n (the size of the array).
+// Line-2: n space-separated integers representing the elements of the array.
+
+// Output Format:
+// ---------------
+// Line-1: Output the sorted array in a single line, with each element separated by a space.
+
+// Constraints:
+// ------------
+// 1 ≤ n ≤ 10^5
+// -10^9 ≤ arr[i] ≤ 10^9
+
+
+// Sample Input-1:
+// ---------------
+// 6
+// 12 11 13 5 6 7
+
+// Sample Output-1:
+// ----------------
+// 5 6 7 11 12 13
+
+
+// Sample Input-2:
+// ---------------
+// 5
+// 10 1 2 8 5
+
+// Sample Output-2:
+// ----------------
+// 1 2 5 8 10
+
 import java.util.*;
 public class mergeSort_SP{
 
