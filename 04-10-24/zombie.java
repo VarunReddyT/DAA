@@ -62,3 +62,40 @@
 // The people with the strengths,
 // 3 and -6 meet, 3 will die, -6 is alive.
 // And 8 and -6 meet, -6 will die, 8 is alive.
+
+import java.util.*;
+
+public class zombie{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String[] arr = sc.nextLine().split(" ");
+        Stack<Integer> stack = new Stack<>();
+        
+        for(String s : arr){
+            int strength = Integer.parseInt(s);
+            boolean alive = true;
+            while(!stack.isEmpty() && strength<0 && stack.peek()>0){
+                int war = stack.peek();
+                int zomb = Math.abs(strength);
+                if(war == zomb){
+                    stack.pop();
+                    alive = false;
+                    break;
+                }
+                else if(war>zomb){
+                    alive = false;
+                    break;
+                }
+                else{
+                    stack.pop();
+                }
+            }
+            if(alive){
+                stack.push(strength);
+            }
+        }
+        
+        System.out.println(new ArrayList<>(stack));
+        sc.close();
+    }
+}
