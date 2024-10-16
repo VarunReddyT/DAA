@@ -42,3 +42,35 @@
 
 // Explanation:
 // The only two pillars are at index 0 and index 1, both with height 1. The distance between them is 1, so the water stored is 1 * 1 = 1.
+
+import java.util.*;
+
+public class maxWater{
+    public static int getWater(int[] arr, int n){
+        int left = 0;
+        int right = n-1;
+        int area = 0;
+        while(left<right){
+            int length = right-left;
+            area = Math.max(area,Math.min(arr[left],arr[right])*length);
+            
+            if(arr[left] < arr[right]){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return area;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(getWater(arr,n));
+        sc.close();
+    }
+}

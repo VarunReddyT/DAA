@@ -34,3 +34,36 @@
 // Explanation:
 // ------------
 // No swap can make the number larger, so return the original number.
+
+import java.util.*;
+
+public class singleDigitPair{
+
+    public static long maxNum(StringBuilder s, long n, int length){
+        long max = n;
+        for(int i=0; i<length; i++){
+            for(int j=i+1; j<length; j++){
+                char temp = s.charAt(i);
+                s.setCharAt(i, s.charAt(j));
+                s.setCharAt(j, temp);
+                
+                max = Math.max(max,Long.parseLong(s.toString()));
+                
+                s.setCharAt(j, s.charAt(i));
+                s.setCharAt(i, temp);
+            }
+        }
+        return max;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long n = sc.nextLong();
+        String str = Long.toString(n);
+
+        StringBuilder s = new StringBuilder(str);
+
+        System.out.println(maxNum(s, n, str.length()));
+
+        sc.close();
+    }
+}
