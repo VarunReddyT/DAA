@@ -62,8 +62,8 @@
 import java.util.*;
 import java.util.Map.Entry;
 
-public class removeVertex{
-    static HashMap<String,ArrayList<String>> map = new HashMap<>();
+public class remove_vertex{
+    static TreeMap<String,ArrayList<String>> map = new TreeMap<>();
 
     public static void initMap(Scanner sc, int v){
         for(int i = 0;i<v;i++){
@@ -81,13 +81,8 @@ public class removeVertex{
     public static void removeCity(String city, int n){
         map.remove(city);
         for(Entry<String, ArrayList<String>> arr : map.entrySet()){
-            Iterator<String> cities = arr.getValue().iterator();
-            while(cities.hasNext()){
-                if(cities.next().equals(city)){
-                    cities.remove();
-                    break;
-                }                                                                                              
-            }
+            ArrayList<String> c = arr.getValue();
+            c.remove(city);
         }
     }
     public static void display(){
