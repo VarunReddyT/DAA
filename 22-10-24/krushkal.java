@@ -115,6 +115,7 @@ public class krushkal{
             edges[i] = new Edge(src, dest, weight);
         }
         System.out.println(findMinimumCost(v, edges));
+        
         sc.close();
     }
 }
