@@ -87,6 +87,7 @@ public class singleSourceShortestPath{
                 return Integer.compare(p1.distance, p2.distance);
             }
         });
+        // PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.distance - b.distance);
         int[] distance = new int[v];
 
         Arrays.fill(distance,Integer.MAX_VALUE);

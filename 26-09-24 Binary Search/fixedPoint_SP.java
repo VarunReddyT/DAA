@@ -57,23 +57,18 @@
 import java.util.*;
 public class fixedPoint_SP {
     public static int fixedp(int[] arr, int low, int high){
-        int index = -1;
         int left = low;
         int right = high;
-        while(left<right){
+        while(left<=right){
             int mid = (left+right)/2;
-            if(arr[mid] - mid == 0){
-                index = mid;
+            if(arr[mid] - mid >= 0){
                 right = mid - 1;
-            }
-            else if(arr[mid] - mid > 0){
-                right = mid-1;
             }
             else{
                 left = mid + 1;
             }
         }
-        return arr[left]==left ? left : index;
+        return arr[left]==left ? left : -1;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
