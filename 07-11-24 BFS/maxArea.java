@@ -53,8 +53,8 @@
 import java.util.*;
 public class maxArea{
     public static int distIslands(int[][] grid, Stack<int[]> stack,int n, int m){
-        int[] neighbourRow = {-1,0,1,0};
-        int[] neighbourCol = {0,1,0,-1};
+        int[] neighbourRow = {-1,-1,-1,0,0,1,1,1};
+        int[] neighbourCol = {-1,0,1,-1,1,-1,0,1};
         
         int area = 0;
 
@@ -65,7 +65,7 @@ public class maxArea{
             
             area++;
             
-            for(int i = 0;i<4;i++){
+            for(int i = 0;i<8;i++){
                 int nr = r+neighbourRow[i];
                 int nc = c+neighbourCol[i];
                 if(nr>=0 && nr<n && nc>=0 && nc<m && grid[nr][nc]==1){
