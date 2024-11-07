@@ -89,6 +89,20 @@ public class distinctIslandDFS{
         }
         return sb.toString();
     }
+    public static HashSet<String> islands(int[][] grid, int n, int m, Stack<int[]> stack){
+        HashSet<String> set = new HashSet<>();
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<m;j++){
+                if(grid[i][j] == 1){
+                    stack.push(new int[]{i,j});
+                    grid[i][j] = 0;
+                    set.add(distIslands(grid, stack, n, m));
+                }
+            }
+        }
+        return set;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -99,17 +113,8 @@ public class distinctIslandDFS{
                 grid[i][j] = sc.nextInt();
             }
         }
-        HashSet<String> set = new HashSet<>();
         Stack<int []> stack = new Stack<>();
-        for(int i = 0;i<n;i++){
-            for(int j = 0;j<m;j++){
-                if(grid[i][j] == 1){
-                    stack.push(new int[]{i,j});
-                    grid[i][j] = 0;
-                    set.add(distIslands(grid, stack, n, m));
-                }
-            }
-        }
+        HashSet<String> set = islands(grid, n, m, stack);
         System.out.println(set.size());
         sc.close();
     }

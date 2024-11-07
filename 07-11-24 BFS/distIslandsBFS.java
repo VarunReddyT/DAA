@@ -56,7 +56,7 @@
 // There are four distinct shapes formed by the blue balloons.
 
 import java.util.*;
-public class distinctIslandBFS{
+public class distIslandsBFS{
     public static String distIslands(int[][] grid, Queue<int[]> queue,int n, int m){
         StringBuilder sb = new StringBuilder();
         int[] neighbourRow = {-1,0,1,0};
@@ -83,6 +83,19 @@ public class distinctIslandBFS{
         }
         return sb.toString();
     }
+    public static HashSet<String> islands(int[][] grid, int n, int m, Queue<int[]> queue){
+        HashSet<String> set = new HashSet<>();
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<m;j++){
+                if(grid[i][j] == 1){
+                    queue.offer(new int[]{i,j});
+                    grid[i][j] = 0;
+                    set.add(distIslands(grid, queue, n, m));
+                }
+            }
+        }
+        return set;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -93,17 +106,10 @@ public class distinctIslandBFS{
                 grid[i][j] = sc.nextInt();
             }
         }
-        HashSet<String> set = new HashSet<>();
         Queue<int []> queue = new LinkedList<>();
-        for(int i = 0;i<n;i++){
-            for(int j = 0;j<m;j++){
-                if(grid[i][j] == 1){
-                    queue.offer(new int[]{i,j});
-                    grid[i][j] = 0;
-                    set.add(distIslands(grid, queue, n, m));
-                }
-            }
-        }
+        
+        HashSet<String> set = islands(grid,n,m,queue);
+        
         System.out.println(set.size());
         sc.close();
     }
