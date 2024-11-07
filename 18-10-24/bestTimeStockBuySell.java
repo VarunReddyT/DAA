@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class stockBuySell{
+public class bestTimeStockBuySell{
     public static int calculateProfit(String[] prices){
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
