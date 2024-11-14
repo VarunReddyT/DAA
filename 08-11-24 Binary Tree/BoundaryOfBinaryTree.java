@@ -81,8 +81,52 @@ class Solution
 	List<Integer> nodes = new ArrayList<>();
 	public List<Integer> boundaryOfBinaryTree(BinaryTreeNode root) {
 	    //Write your code here and return list of nodes
+	    if(root == null || root.data == -1){
+			return nodes;
+		}
+		nodes.add(root.data);
+		left(root.left);
+		leaves(root.left);
+		leaves(root.right);
+		right(root.right);
+		return nodes;
 	}
 	//Your supporting methods if any goes here
+	public void left(BinaryTreeNode root){
+		if((root == null || root.data == -1) || ((root.left == null || root.left.data == -1) && (root.right==null || root.right.data == -1))){
+			return;
+		}
+		nodes.add(root.data);
+		if(root.left == null || root.left.data == -1){
+			left(root.right);
+		}
+		else{
+			left(root.left);
+		}
+	}
+	public void right(BinaryTreeNode root){
+		if((root == null || root.data == -1) || ((root.left == null || root.left.data == -1) && (root.right==null || root.right.data == -1))){
+			return;
+		}
+		if(root.right == null || root.right.data == -1){
+			right(root.left);
+		}
+		else{
+			right(root.right);
+		}
+		nodes.add(root.data);
+	}
+	public void leaves(BinaryTreeNode root){
+		if(root == null || root.data == -1){
+			return;
+		}
+		if((root.left == null || root.left.data == -1) && (root.right == null || root.right.data == -1)){
+			nodes.add(root.data);
+			return;
+		}
+		leaves(root.left);
+		leaves(root.right);
+	}
 }
 
 public class BoundaryOfBinaryTree
