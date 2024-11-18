@@ -51,13 +51,26 @@ class BinaryTreeNode
 class Solution {
     public int greatNodes(BinaryTreeNode root) {
         //Write your code here
-        return 0;
+        return countGreatNodes(root, 0);
     }
-
+    public int countGreatNodes(BinaryTreeNode root, int max){
+        if(root==null || root.data==-1){
+            return 0;
+        }
+        int count = 0;
+        if(root.data>=max){
+            count++;
+            max = root.data;
+        }
+        int left = countGreatNodes(root.left, max);
+        int right = countGreatNodes(root.right, max);
+        count += left+right;
+        return count;
+    }
     //Your supporting methods(if any) goes here
 }
 
-class BTree {
+class GreatNodes {
     static BinaryTreeNode root;
 
     void insert(BinaryTreeNode temp, Integer key) {
@@ -91,7 +104,7 @@ class BTree {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         String[] str = sc.nextLine().split(" ");
-        BTree tree = new BTree();
+        GreatNodes tree = new GreatNodes();
         BinaryTreeNode root1 = new BinaryTreeNode(Integer.parseInt(str[0]));
         for (int i = 1; i < str.length; i++) 
             tree.insert(root1, Integer.parseInt(str[i]));
