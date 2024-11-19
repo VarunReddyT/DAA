@@ -49,10 +49,32 @@ class BinaryTreeNode {
 class Solution {
     public BinaryTreeNode lowestCommonAncestor(BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
         //Write your code here
-        return root;
+        if(root == null || root.data == -1 || root == p || root == q){
+            return root;
+        }
+        BinaryTreeNode left = lowestCommonAncestor(root.left, p, q);
+        BinaryTreeNode right = lowestCommonAncestor(root.right, p, q);
+        if(left != null && right != null){
+            return root;
+        }
+        if(left!=null){
+            return left;
+        }
+        return right;
     }
     public BinaryTreeNode findNode(BinaryTreeNode root, int value){
-        return root;
+        if(root == null || root.data == -1){
+            return null;
+        }
+        if(root.data == value){
+            return root;
+        }
+        BinaryTreeNode left = findNode(root.left, value);
+        if(left!=null){
+            return left;
+        }
+        BinaryTreeNode right = findNode(root.right, value);
+        return right;
     }
     //Your supporting methods(if any) goes here
 }
