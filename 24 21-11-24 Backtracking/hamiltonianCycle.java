@@ -53,60 +53,54 @@ class hamiltonianCycle
 	
 	void hamCycle(int graph[][]){
 		//Write your code here
-        int[] path = new int[V];
-		for(int i = 0;i<V;i++){
-			path[i] = -1;
-		}
+		int[] path = new int[V];
+		Arrays.fill(path,-1);
 		path[0] = 0;
-		
 		if(hamCycleUtil(graph,path,1)==false){
-			System.out.println("No Solution");
-			return;
+		    System.out.println("No Solution");
+		    return;
 		}
 		printSolution(path);
-		return;
 	}
-	void printSolution(int path[]){
-		for(int i=0;i<V;i++){
-			System.out.print(path[i]+" ");
-		}
-		System.out.print(path[0]);
-	}
-
-	boolean hamCycleUtil(int graph[][],int path[],int pos){
-		if(pos==V){
-			if(graph[path[pos-1]][path[0]]==1){
-				return true;
-			}
-			else{
-				return false;
-			}
-		}
-		for(int v=1;v<V;v++){
-			if(isSafe(v,graph,path,pos)){
-				path[pos] = v;
-				if(hamCycleUtil(graph,path,pos+1)==true){
-					return true;
-				}
-				path[pos] = -1;
-			}
-		}
-		return false;
-	}
-	boolean isSafe(int v,int graph[][],int path[],int pos){
-		if(graph[path[pos-1]][v]==0){
-			return false;
-		}	
-		for(int i=0;i<pos;i++){
-			if(path[i]==v){
-				return false;
-			}
-		}
-		return true;
-	}	
     
     //Your utility functions goes here
+    boolean hamCycleUtil(int[][] graph, int[] path, int pos){
+        if(pos==V){
+            if(graph[path[pos-1]][path[0]]==1){
+                return true;
+            }
+            return false;
+        }
+        for(int i = 1;i<V;i++){
+            if(isSafe(graph,path,pos,i)){
+				// System.out.println("Index : "+path[pos-1]+" For Index: "+i);
+                path[pos] = i;
+                if(hamCycleUtil(graph,path,pos+1)){
+                    return true;
+                }
+                path[pos] = -1;
+            }
+        }
+        return false;
+    }
     
+    boolean isSafe(int[][] graph, int[] path, int pos, int i){
+        if(graph[path[pos-1]][i]==0){ // Check connection
+            return false;
+        }
+        for(int v = 0;v<V;v++){
+            if(path[v]==i){
+                return false;
+            }
+        }
+        return true;
+    }
+    void printSolution(int[] path){
+        for(int i = 0;i<V;i++){
+            System.out.print(path[i]+" ");
+        }
+        System.out.print(path[0]);
+    }
 	public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
 		V = sc.nextInt();
@@ -118,6 +112,6 @@ class hamiltonianCycle
 
 		hamiltonianCycle obj = new hamiltonianCycle();
 		obj.hamCycle(graph);
-        sc.close();
+		sc.close();
 	}
 }
