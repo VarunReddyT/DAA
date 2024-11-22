@@ -47,14 +47,63 @@
 
 import java.util.*;
 
-class HamiltonianCycle
+class hamiltonianCycle
 {
 	static int V;
 	
 	void hamCycle(int graph[][]){
 		//Write your code here
-        
+        int[] path = new int[V];
+		for(int i = 0;i<V;i++){
+			path[i] = -1;
+		}
+		path[0] = 0;
+		
+		if(hamCycleUtil(graph,path,1)==false){
+			System.out.println("No Solution");
+			return;
+		}
+		printSolution(path);
+		return;
 	}
+	void printSolution(int path[]){
+		for(int i=0;i<V;i++){
+			System.out.print(path[i]+" ");
+		}
+		System.out.print(path[0]);
+	}
+
+	boolean hamCycleUtil(int graph[][],int path[],int pos){
+		if(pos==V){
+			if(graph[path[pos-1]][path[0]]==1){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		for(int v=1;v<V;v++){
+			if(isSafe(v,graph,path,pos)){
+				path[pos] = v;
+				if(hamCycleUtil(graph,path,pos+1)==true){
+					return true;
+				}
+				path[pos] = -1;
+			}
+		}
+		return false;
+	}
+	boolean isSafe(int v,int graph[][],int path[],int pos){
+		if(graph[path[pos-1]][v]==0){
+			return false;
+		}	
+		for(int i=0;i<pos;i++){
+			if(path[i]==v){
+				return false;
+			}
+		}
+		return true;
+	}	
     
     //Your utility functions goes here
     
@@ -67,7 +116,7 @@ class HamiltonianCycle
 			for(int j=0;j<V;j++)
 				graph[i][j]=sc.nextInt();
 
-		HamiltonianCycle obj = new HamiltonianCycle();
+		hamiltonianCycle obj = new hamiltonianCycle();
 		obj.hamCycle(graph);
         sc.close();
 	}
