@@ -43,3 +43,19 @@
 // Sample Output-3:
 // ----------------
 // [xyzab, xyzac]
+
+import java.util.*;
+
+public class braceExpression{
+    public static void braceExpressionUtil(String expression,int i, TreeSet<String> result, String s){
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String expression = sc.next();
+        TreeSet<String> result = new TreeSet<>();
+        braceExpressionUtil(expression,0,result,"");
+        System.out.println(result);
+        sc.close();
+    }
+}
