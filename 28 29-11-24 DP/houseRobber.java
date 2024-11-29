@@ -41,3 +41,36 @@
 // Explanation:
 // ------------
 // Thief will steal 5 and 11 from the houses.
+
+import java.util.*;
+
+public class houseRobber{
+    public static int maxMoney(int[] houses, int n){
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return houses[0];
+        }
+        if(n==2){
+            return Math.max(houses[0],houses[1]);
+        }
+        int[] dp = new int[n];
+        dp[0] = houses[0];
+        dp[1] = Math.max(houses[0],houses[1]);
+        for(int i=2;i<n;i++){
+            dp[i] = Math.max(dp[i-1],dp[i-2]+houses[i]);
+        }
+        return dp[n-1];
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] houses = new int[n];
+        for(int i=0;i<n;i++){
+            houses[i] = sc.nextInt();
+        }
+        System.out.println(maxMoney(houses,n));
+        sc.close();
+    }
+}
