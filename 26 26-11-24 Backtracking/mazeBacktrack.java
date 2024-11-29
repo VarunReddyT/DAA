@@ -56,3 +56,36 @@
 // Sample Output-2:
 // ----------------
 // false
+
+import java.util.*;
+
+public class mazeBacktrack{
+    public static boolean mazeCheck(int[][] arr, int n){
+        boolean[][] visited = new boolean[n][n];
+        return helper(arr,n,0,0,visited);
+    }
+    public static boolean helper(int[][] arr, int n, int i, int j, boolean[][] visited){
+        if(i<0 || i>=n || j<0 || j>=n || visited[i][j] || arr[i][j] == 0){
+            return false;
+        }
+        if(i == n-1 && j == n-1){
+            return true;
+        }
+        visited[i][j] = true;
+        boolean res = helper(arr,n,i+1,j,visited) || helper(arr,n,i,j+1,visited);
+        visited[i][j] = false;
+        return res;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] arr = new int[n][n];
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<n;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println(mazeCheck(arr,n));
+        sc.close();
+    }
+}

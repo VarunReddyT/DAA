@@ -40,7 +40,6 @@ import java.util.*;
 public class generalizedAbbrevation {
     List<String> result = new ArrayList<>();
     void backtrack(String input, StringBuilder curr, int skip , int currLength){
-        // implemment the code
         int len = curr.length();
         if(currLength == input.length()){
             if(skip>0){

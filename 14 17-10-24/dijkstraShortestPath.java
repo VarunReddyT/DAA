@@ -78,7 +78,7 @@ class Pair{
     }
 }
 
-public class singleSourceShortestPath{
+public class dijkstraShortestPath{
 
     public static void dijkstra(int[][] graph, int source, int v){
         PriorityQueue<Pair> pq = new PriorityQueue<>(new Comparator<Pair>() {
