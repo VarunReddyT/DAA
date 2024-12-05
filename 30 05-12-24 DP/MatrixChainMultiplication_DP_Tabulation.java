@@ -1,6 +1,4 @@
-// Your are given the sizes of N-1 matrices as a list[] of size N, 
-// where the matrix are numbered from 0 to N-2 
-// and the matrix size is defined as matrix-i size is list[i]*list[i+1].
+// Your are given the sizes of N-1 matrices as a list[] of size N, where the matrix are numbered from 0 to N-2 and the matrix size is defined as matrix-i size is list[i]*list[i+1].
 
 // Matrix multiplication follows associative rule. If you want to multiply 4 matrices, A,B,C and D.
 // You can perform multiplication in the following ways, ABCD, AB(CD), A(BC)D, ((AB)C)D, (AB)(CD)..etc.
@@ -49,23 +47,23 @@
 // => 1140 + 630 + 665 = 2435 multiplications
 
 import java.util.*;
-public class MatrixChainMultiplication_Memoization {
-    public static int matrixChainMultiplication(int[] arr, int i, int j, int[][] dp){
-        if(i==j){
-            return 0;
+public class MatrixChainMultiplication_DP_Tabulation {
+    public static int matrixChainMultiplication(int[] arr,int n, int[][] dp){
+        for(int len = 1; len<n-1;len++){
+            for(int i = 1; i<n-len;i++){
+                int j = i+len;
+                dp[i][j] = Integer.MAX_VALUE;
+                for(int k = i;k<j;k++){
+                    int cost = dp[i][k] + dp[k+1][j] + arr[i-1]*arr[k]*arr[j];
+                    dp[i][j] = Math.min(dp[i][j],cost);
+                }
+            }
         }
-        if(dp[i][j] != 0){
-            return dp[i][j];
-        }
-        dp[i][j] = Integer.MAX_VALUE;
-        for(int k = i;k<j;k++){
-            dp[i][j] = Math.min(dp[i][j],matrixChainMultiplication(arr, i, k, dp)+matrixChainMultiplication(arr, k+1, j, dp) + arr[i-1]*arr[k]*arr[j]);
-        }
-        return dp[i][j];
+        return dp[1][n-1];
     }
-    public static int matrixChainOrder(int[] arr, int i, int n){
+    public static int matrixChainOrder(int[] arr, int n){
         int[][] dp = new int[n][n];
-        return matrixChainMultiplication(arr,i,n-1,dp);
+        return matrixChainMultiplication(arr,n,dp);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -74,7 +72,7 @@ public class MatrixChainMultiplication_Memoization {
         for(int i = 0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        System.out.println(matrixChainOrder(arr,1,n));
+        System.out.println(matrixChainOrder(arr,n));
         sc.close();
 
     }
