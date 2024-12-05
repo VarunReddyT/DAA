@@ -54,3 +54,36 @@
 // Sample Output-2:
 // ----------------
 // 2
+
+import java.util.*;
+
+public class CountCornerRectangles{
+    public static int countRectangles(int[][] arr, int n, int m){
+        int res = 0;
+        for(int i = 0;i<n;i++){
+            for(int j = i+1;j<n;j++){
+                for(int k = 0,counter=0;k<m;k++){
+                    if(arr[i][k] + arr[j][k] == 2){
+                        res += counter++;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[n][m];
+
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<m;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println(countRectangles(arr, n, m));
+        sc.close();
+    }
+}
