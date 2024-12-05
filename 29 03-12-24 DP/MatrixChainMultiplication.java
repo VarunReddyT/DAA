@@ -54,14 +54,14 @@ import java.util.*;
 
 public class MatrixChainMultiplication{
     public static int matrixChainOrder(int[] arr, int i, int j){
-        if(i+1==j){
+        if(i==j){
             return 0;
         }
         int res = Integer.MAX_VALUE;
-        for(int k=i+1;k<j;k++){
+        for(int k=i;k<j;k++){
             int count = matrixChainOrder(arr,i,k);
-            count += matrixChainOrder(arr,k,j);
-            count += arr[i]*arr[k]*arr[j];
+            count += matrixChainOrder(arr,k+1,j);
+            count += arr[i-1]*arr[k]*arr[j];
             res = Math.min(res,count);
         }
         return res;
@@ -73,7 +73,7 @@ public class MatrixChainMultiplication{
         for(int i = 0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        System.out.println(matrixChainOrder(arr,0,n-1));
+        System.out.println(matrixChainOrder(arr,1,n-1));
         sc.close();
     }
 }
