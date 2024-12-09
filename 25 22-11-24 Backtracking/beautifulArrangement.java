@@ -34,3 +34,36 @@
 // The second shuffled list is [2, 1]:
 // Integer at the 1st position (i=1) is 2, and 2 is divisible by i (i=1).
 // Integer at the 2nd position (i=2) is 1, and i (i=2) is divisible by 1.
+
+import java.util.*;
+
+public class beautifulArrangement{
+    public static int countArrangement(int n) {
+        int[] count = new int[1];
+        boolean[] visited = new boolean[n+1];
+        countArrangementUtil(n,1,visited,count);
+        return count[0];
+    }
+    
+    public static void countArrangementUtil(int n, int pos, boolean[] visited, int[] count){
+        if(pos>n){
+            count[0]++;
+            return;
+        }
+        
+        for(int i=1;i<=n;i++){
+            if(!visited[i] && (i%pos==0 || pos%i==0)){
+                visited[i] = true;
+                countArrangementUtil(n,pos+1,visited,count);
+                visited[i] = false;
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(countArrangement(n));
+        sc.close();
+    }
+}

@@ -50,3 +50,33 @@
 // 111 - 7
 // 101 - 5
 // 100 - 4
+
+import java.util.*;
+
+public class grayCode{
+    public static List<Integer> generateGrayCode(int n) {
+        List<Integer> result = new ArrayList<>();
+        generateGrayCodeHelper(n, result);
+        return result;
+    }
+    private static void generateGrayCodeHelper(int n, List<Integer> result) {
+        if (n == 0) {
+            result.add(0);
+        } else {
+            generateGrayCodeHelper(n - 1, result);
+            int size = result.size();
+            int addOn = 1 << (n - 1); 
+            for (int i = size - 1; i >= 0; i--) {
+                result.add(result.get(i) + addOn);
+            }
+        }
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        List<Integer> result = generateGrayCode(n);
+        System.out.println(result);
+        sc.close();
+    }
+}

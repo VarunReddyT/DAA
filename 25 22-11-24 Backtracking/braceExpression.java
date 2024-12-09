@@ -48,7 +48,24 @@ import java.util.*;
 
 public class braceExpression{
     public static void braceExpressionUtil(String expression,int i, TreeSet<String> result, String s){
-
+        if(i==expression.length()){
+            result.add(s);
+            return;
+        }
+        if(expression.charAt(i)=='['){
+            int j=i+1;
+            while(j<expression.length() && expression.charAt(j)!=']'){
+                j++;
+            }
+            String sub = expression.substring(i+1,j);
+            String[] options = sub.split(",");
+            for (String option : options) {
+                braceExpressionUtil(expression, j + 1, result, s + option);
+            }
+        }
+        else{
+            braceExpressionUtil(expression,i+1,result,s+expression.charAt(i));
+        }
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
