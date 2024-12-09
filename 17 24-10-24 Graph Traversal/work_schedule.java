@@ -57,3 +57,37 @@
 // 10 3 5
 // 5
 // output =90
+
+import java.util.*;
+
+public class work_schedule{
+    public static int maxProfit(int[][] jobs, int timeSlots){
+        Arrays.sort(jobs, (a, b) -> b[2] - a[2]);
+        int[] slots = new int[timeSlots];
+        int profit = 0;
+        for(int i=0; i<jobs.length; i++){
+            int deadline = jobs[i][1];
+            for(int j=deadline-1; j>=0; j--){
+                if(j<timeSlots && slots[j]==0){
+                    slots[j] = jobs[i][2];
+                    profit += jobs[i][2];
+                    break;
+                }
+            }
+        }
+        return profit;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] jobs = new int[n][3];
+        for(int i=0; i<n; i++){
+            jobs[i][0] = sc.nextInt();
+            jobs[i][1] = sc.nextInt();
+            jobs[i][2] = sc.nextInt();
+        }
+        int timeSlots = sc.nextInt();
+        System.out.println(maxProfit(jobs, timeSlots));
+        sc.close();
+    }
+}

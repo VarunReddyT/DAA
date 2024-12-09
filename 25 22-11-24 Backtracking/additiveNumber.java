@@ -53,3 +53,50 @@
 // 1 <= num.length <= 35, num consists only of digits
 // Time complexity: O(N^2)
 // Space complexity: O(1)
+
+import java.util.*;
+
+public class additiveNumber{
+    public static boolean isAdditiveNumber(String number){
+        int n = number.length();
+        for(int i=1;i<=n/2;i++){
+            for(int j=1;j<=(n-i)/2;j++){
+                if(isValid(number,i,j)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static boolean isValid(String number, int i, int j){
+        if(number.charAt(0)=='0' && i>1){
+            return false;
+        }
+        if(number.charAt(i)=='0' && j>1){
+            return false;
+        }
+        String num1 = number.substring(0,i);
+        String num2 = number.substring(i,i+j);
+        String sum;
+        int k = i+j;
+        while(k<number.length()){
+            Long n1 = Long.parseLong(num1);
+            Long n2 = Long.parseLong(num2);
+            Long n3 = n1+n2;
+            sum = n3.toString();
+            if(!number.startsWith(sum,k)){
+                return false;
+            }
+            k+=sum.length();
+            num1 = num2;
+            num2 = sum;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String number = sc.next();
+        System.out.println(isAdditiveNumber(number));
+        sc.close();
+    }
+}

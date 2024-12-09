@@ -95,3 +95,34 @@
 // Sample Output-5:
 // ----------------
 // 5
+
+import java.util.*;
+
+public class shotBallon{
+    public static int minArrows(int[][] points){
+        Arrays.sort(points, (a, b) -> a[1] - b[1]);
+        int arrows = 1;
+        int end = points[0][1];
+        for(int i=1; i<points.length; i++){
+            if(points[i][0] > end){
+                arrows++;
+                end = points[i][1];
+            }
+        }
+        return arrows;
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int[][] points = new int[m][n];
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                points[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println(minArrows(points));
+        sc.close();
+    }
+}

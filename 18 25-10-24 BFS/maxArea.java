@@ -36,7 +36,6 @@
 // ----------------
 // 8
 
-
 // Sample Input-2:
 // ---------------
 // 5 5
@@ -52,33 +51,56 @@
 
 import java.util.*;
 
-class Pair{
-    int i;
-    int j;
-    Pair(int i, int j){
-        this.i = i;
-        this.j = j;
-    }
-}
+public class maxArea {
+    public static int getMaxArea(int[][] matrix, int m, int n) {
+        int[] neighbourRow = { -1, -1, -1, 0, 1, 1, 1, 0 };
+        int[] neighbourCol = { -1, 0, 1, 1, 1, 0, -1, -1 };
 
-public class maxArea{
-    public static int getMaxArea(int[][] matrix, int m, int n){
-        int area = 0;
-         
-        return area;
+        int maxArea = 0;
+        boolean[][] visited = new boolean[m][n];
+        Queue<int[]> queue = new LinkedList<>();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 1 && !visited[i][j]) {
+                    visited[i][j] = true;
+                    queue.add(new int[] { i, j });
+                    int currentArea = 0;
+
+                    while (!queue.isEmpty()) {
+                        int[] curr = queue.poll();
+                        currentArea++;
+                        int row = curr[0];
+                        int col = curr[1];
+                        for (int d = 0; d < 8; d++) {
+                            int newRow = row + neighbourRow[d];
+                            int newCol = col + neighbourCol[d];
+
+                            if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n &&
+                                    matrix[newRow][newCol] == 1 && !visited[newRow][newCol]) {
+                                visited[newRow][newCol] = true;
+                                queue.add(new int[] { newRow, newCol });
+                            }
+                        }
+                    }
+                    maxArea = Math.max(maxArea, currentArea);
+                }
+            }
+        }
+        return maxArea;
+
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] matrix = new int[m][n];
-        for(int i = 0;i<m;i++){
-            for(int j = 0;j<n;j++){
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 matrix[i][j] = sc.nextInt();
             }
         }
-
-        System.out.println(getMaxArea(matrix,m,n));
+        System.out.println(getMaxArea(matrix, m, n));
 
         sc.close();
     }
