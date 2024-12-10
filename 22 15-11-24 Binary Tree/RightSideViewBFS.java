@@ -64,20 +64,22 @@ class Solution
             return arr;
         }
         queue.add(root);
-        arr.add(root.data);
-        // while(!queue.isEmpty()){
-        //     BinaryTreeNode top = queue.poll();
-        //     if(top.right != null || top.right.data != -1){
-        //         queue.offer(top.right);
-        //     }
-        //     if(top.left != null || top.left.data != -1){
-        //         queue.offer(top.left);
-        //     }
-        //     arr.add(queue.peek().data);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                BinaryTreeNode current = queue.poll();
+                if (i == size - 1) {
+                    arr.add(current.data);
+                }
+                if (current.left != null && current.left.data != -1) {
+                    queue.add(current.left);
+                }
+                if (current.right != null && current.right.data != -1) {
+                    queue.add(current.right);
+                }
+            }
+        }
 
-             // queue.offer()
-
-        // }
         return arr;
     }
     //Your supporting methods(if any) goes here  
