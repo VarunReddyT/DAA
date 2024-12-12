@@ -1,3 +1,4 @@
+// Max Gold
 // The Kolar Gold Fields (KGF) is in the form of a m*n grid,
 // Each field, contains some amount of Gold in it.
  

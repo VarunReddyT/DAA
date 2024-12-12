@@ -1,3 +1,4 @@
+// Gray code
 // Given a integer value N, indicates number of bits in a binary number.
 
 // An n-bit gray code sequence is a sequence of 2n integers where:

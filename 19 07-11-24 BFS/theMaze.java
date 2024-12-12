@@ -1,3 +1,4 @@
+// Maze
 // You are given an N×N grid that represents a maze. 
 // In this maze: Each cell contains either a 0 or 1.
 //  --1 indicates an open path where you can walk.

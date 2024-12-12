@@ -1,3 +1,4 @@
+// MST
 // You are given an undirected, connected graph with N vertices and M edges, represented as an adjacency matrix. 
 // Your task is to construct the Minimum Spanning Tree (MST) of this graph using Prim's algorithm. 
 // The MST is a subgraph that connects all the vertices together, without any cycles, and with the minimum possible total edge weight.

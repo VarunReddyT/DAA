@@ -1,3 +1,4 @@
+// N Queens
 // Akbar used to play chess with Birbal almost every evening.
 // Once Akbar has challanged Birbal to place the queens in each row of the board,
 // such that no queen should attack another queen on the board.

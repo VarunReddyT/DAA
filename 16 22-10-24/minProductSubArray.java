@@ -1,3 +1,4 @@
+// Min Prod Subarray
 // You are given an array of integers that can include both positive and negative numbers. 
 // Your task is to find the minimum possible product of a non-empty subset of the given array.
 

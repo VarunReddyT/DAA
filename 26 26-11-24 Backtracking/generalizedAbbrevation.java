@@ -1,3 +1,4 @@
+// Gen Abbr
 // With the growing trend of shorthand writing, 
 // people often replace parts of a word with their lengths to create short-forms. 
 // A valid short-form can be created by replacing non-overlapping and non-adjacent substrings with their respective lengths.

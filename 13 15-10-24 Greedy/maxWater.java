@@ -1,3 +1,4 @@
+// Max water
 // You are given an array height that represents the height of a series of vertical pillars standing on a flat surface. 
 // The pillars are located at indices (i, 0) and extend vertically to the height height[i]. 
 // The task is to find two pillars that can form a container with the x-axis (ground) that can store the maximum amount of water between them.

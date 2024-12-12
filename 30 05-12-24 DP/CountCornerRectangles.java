@@ -1,3 +1,4 @@
+// Corner Rectangles
 // JVS Infra Pvt Ltd purchased a flatland of size M*N, and it is divided 
 // into 1*1 cells. They mave marked some cells with red colors indicated 
 // with 1 and other cells with blue color indicated with 0.
