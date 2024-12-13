@@ -54,3 +54,49 @@
 // 	  8  20
 // 		/
 // 	 12
+
+import java.util.*;
+
+public class optimalBST_DP{
+    public static int getMinFreq(int[] freq, int n){
+        int[][] dp = new int[n][n];
+        for(int i = 0;i<n;i++){
+            dp[i][i] = freq[i];
+        }
+        for(int len = 2;len<=n;len++){
+            for(int i = 0;i<=n-len;i++){
+                int j = i+len-1;
+                dp[i][j] = Integer.MAX_VALUE;
+                int sum = 0;
+                for(int k = i;k<=j;k++){
+                    sum+=freq[k];
+                }
+                for(int k = i;k<=j;k++){
+                    int val = sum;
+                    if(k-1>=i){
+                        val += dp[i][k-1];
+                    }
+                    if(k+1<=j){
+                        val += dp[k+1][j];
+                    }
+                    dp[i][j] = Math.min(dp[i][j],val);
+                }
+            }
+        }
+        return dp[0][n-1];
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] keys = new int[n];
+        int[] freq = new int[n];
+        for(int i = 0;i<n;i++){
+            keys[i] = sc.nextInt();
+        }
+        for(int i = 0;i<n;i++){
+            freq[i] = sc.nextInt();
+        }
+        System.out.println(getMinFreq(freq,n));
+        sc.close();
+    }
+}
