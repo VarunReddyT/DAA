@@ -48,3 +48,25 @@
 // Sample Output-2:
 // ----------------
 // 3
+
+import java.util.*;
+
+public class passwordDetection{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String password = sc.next();
+        int vowels = 0;
+        int consonants = 0;
+        for(int i=0;i<password.length();i++){
+            char ch = password.charAt(i);
+            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+                vowels++;
+            }
+            else{
+                consonants++;
+            }
+        }
+        System.out.println(Math.abs(consonants-vowels));
+        sc.close();
+    }
+}
