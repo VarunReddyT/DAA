@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * T(n)=O(n!)
+ */
+
 public class CampusBikes {
     int min = Integer.MAX_VALUE;
 

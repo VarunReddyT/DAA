@@ -1,4 +1,6 @@
-package Strings;
+/*
+ * T(n)=O(n)
+ */
 import java.util.*;
 
 class CountSubstrings {

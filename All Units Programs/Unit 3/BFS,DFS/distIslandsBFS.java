@@ -1,4 +1,8 @@
 import java.util.*;
+
+/*
+ * T(n)=O(n*m)
+ */
 public class distIslandsBFS{
     public static String distIslands(int[][] grid, Queue<int[]> queue,int n, int m){
         StringBuilder sb = new StringBuilder();

@@ -1,5 +1,7 @@
-package DP;
 import java.util.*;
+/*
+ * T(n)=O(2^n*n)
+ */
 
 public class TSPDP {
     static int n;

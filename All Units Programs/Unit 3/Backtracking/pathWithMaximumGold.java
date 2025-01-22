@@ -1,5 +1,8 @@
 import java.util.*;
 
+/*
+ * T(n)=O(4^n)
+ */
 public class pathWithMaximumGold {
     public int getMaximumGold(int[][] grid) {
         int maxGold = 0;

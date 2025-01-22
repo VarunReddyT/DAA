@@ -1,5 +1,8 @@
-package Trees;
 import java.util.*;
+
+/*
+ * T(n)=O(n)
+ */
 
 class BinaryTreeNode {
     public int data;

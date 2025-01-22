@@ -1,5 +1,7 @@
-package DP;
 import java.util.*;
+/*
+ * T(n)=O(n*W)
+ */
 
 public class zeroOneKnapsackDP {
     // Returns the maximum value that can be put in a knapsack of capacity W

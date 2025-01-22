@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * T(n)=O(2^n)
+ */
+
 public class GenerateAbbreviations {
     public List<String> makeShortcutWords(String word) {
         List<String> ret = new ArrayList<String>();

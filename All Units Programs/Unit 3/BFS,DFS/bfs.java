@@ -1,5 +1,8 @@
 import java.util.*;
 
+/*
+ * T(V+E)
+ */
 class Graph {
     private int v;
     private LinkedList<Integer> adjList[];

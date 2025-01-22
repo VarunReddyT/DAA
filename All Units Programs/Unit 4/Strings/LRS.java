@@ -1,4 +1,6 @@
-package Strings;
+/*
+ * T(n)=O(n^2)
+ */
 import java.util.*;
 
 class LRS {

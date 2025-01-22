@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * T(n)=O(n^2)
+ */
+
 public class TheMazeDFS {
     public static boolean dfs(int[][] grid, int r, int c, int n) {
         if (r == n - 1 && c == n - 1) {

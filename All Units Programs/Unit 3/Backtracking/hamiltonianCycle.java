@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * T(n)=O(n!)
+ */
+
 public class hamiltonianCycle {
     static int V;
 

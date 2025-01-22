@@ -1,4 +1,6 @@
-package DP;
+/*
+ * T(n)=O(n*W)
+ */
 class ZeroOneMemo {
     // Returns the value of maximum profit
     static int knapSackRec(int W, int weight[], int profit[], int n, int[][] dp) {

@@ -1,6 +1,8 @@
-package DP;
 import java.util.*;
 
+/*
+ * T(n)=O(n^3)
+ */
 class MatrixChainMultiplicationDP {
     static int MatrixChainOrder(int p[], int n) {
         int dp[][] = new int[n][n];

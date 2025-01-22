@@ -1,5 +1,8 @@
-package DP;
 import java.util.*;
+
+/*
+ * T(n)=O(n)
+ */
 
 class MaxSubArray {
     public int maxSubArray(int[] arr) {

@@ -1,4 +1,6 @@
-package DP;
+/*
+ * T(n)=O(2^n)
+ */
 class ZeroOneRecursion {
     static int knapSack(int maxWeight, int weight[], int profit[], int n) {
         // Base Case

@@ -1,5 +1,8 @@
-package DP;
 import java.util.*;
+
+/*
+ * T(n)=O(n^3)
+ */
 
 class OBSTDP {
     int minSearchCostBST(int keys[], int freq[], int n) {

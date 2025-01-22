@@ -1,6 +1,8 @@
-package Strings;
 import java.util.*;
 
+/*
+ * T(n)=O(n)
+ */
 class ValidWordAbbreviation {
     public boolean validWordAbbreviation(String word, String abbr) {
         int pw = 0;

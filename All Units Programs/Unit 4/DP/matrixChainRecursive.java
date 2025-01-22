@@ -1,5 +1,9 @@
-package DP;
 import java.util.*;
+
+/*
+ * T(n)=T(i,k)+T(k+1,j)+O(1)
+ * T(n)=O(2^n)
+ */
 
 class MatrixChainMultiplicationRecursion {
     static int MatrixChainOrder(int p[], int i, int j) {

@@ -1,4 +1,6 @@
-package DP;
+/*
+ * T(n)=O(n)
+ */
 public class FibonacciTabulation {
     static int[] F = new int[50];
 

@@ -1,5 +1,8 @@
-package DP;
 import java.util.*;
+
+/*
+ * T(n)=O(n^3)
+ */
 
 public class CountCornerRectangles {
     public int countCornerRectangles(int[][] grid) {

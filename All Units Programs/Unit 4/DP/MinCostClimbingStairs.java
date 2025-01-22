@@ -1,5 +1,8 @@
-package DP;
 import java.util.*;
+
+/*
+ * Time Complexity: O(n)
+ */
 public class MinCostClimbingStairs {
     public int minCostRecur(int n, int[] cost) {
         return Math.min(minCost(cost, n - 1), minCost(cost, n - 2));

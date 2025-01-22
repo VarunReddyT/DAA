@@ -1,5 +1,8 @@
 import java.util.*;
 
+/*
+ * T(n)=O(2^n)
+ */
 public class GrayCode {
     int n;
 

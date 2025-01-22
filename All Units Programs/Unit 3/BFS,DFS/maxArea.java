@@ -1,4 +1,8 @@
 import java.util.*;
+
+/*
+ * T(n)=O(n*m)
+ */
 public class maxArea{
     public static int distIslands(int[][] grid, Stack<int[]> stack,int n, int m){
         int[] neighbourRow = {-1,-1,-1,0,0,1,1,1};

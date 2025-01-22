@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * T(n)=O(2^n)
+ */
+
 public class braceExpression {
     public static String[] expand(String expr) {
         TreeSet<String> set = new TreeSet<>();
