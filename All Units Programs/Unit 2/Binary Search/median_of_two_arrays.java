@@ -1,5 +1,9 @@
 import java.io.*;
 import java.util.*;
+
+/*
+ * O(log min(n,m))
+ */
 public class median_of_two_arrays {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

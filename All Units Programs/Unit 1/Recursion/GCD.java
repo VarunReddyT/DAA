@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * T(a,b)=T(b,a%b)+O(1)
+ * O(log(min(a,b)))
+ */
 public class GCD {
     public static int calculateGCD(int a, int b) {
         // If both the number are equal

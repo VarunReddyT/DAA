@@ -1,6 +1,9 @@
-package Recursion;
 import java.util.*;
 
+/*
+ * T(n)=T(n−1)+O(n)
+ *  O(n^2)
+ */
 public class ReverseString{
     static public String reverse(String s){
         if(s.length()==0){

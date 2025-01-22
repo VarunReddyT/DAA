@@ -1,11 +1,21 @@
 import java.util.*;
 
+/*
+ * Best Case:
+ * T(n)=2T(n/2)+O(n)
+* T(n)=O(nlogn)
+
+* Worst Case:
+* T(n)=T(n−1)+O(n)
+* O(n^2).
+ */
 public class QuickSortRecursion {
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
     static int partition_low(int arr[], int low, int high) {
         int pivot = arr[low];
         int k = high;

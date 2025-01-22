@@ -1,5 +1,8 @@
-package Greedy;
 import java.util.*;
+
+/*
+ * T(n) = O(nlogn)
+ */
 
 class ItemValue implements Comparable<ItemValue>{
     int value, weight;

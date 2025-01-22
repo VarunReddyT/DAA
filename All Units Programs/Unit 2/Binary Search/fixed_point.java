@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * O(nlogn)
+ * BS + sorting
+ */
 public class fixed_point {
     public int fixedPoint(int[] arr, int low, int high) {
         int left = low;

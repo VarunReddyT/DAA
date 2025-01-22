@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+ * O(4^n/2 * klogk) where k is the number of generated numbers in the output
+ */
+
 public class StrobogrammaticNumberII {
 
     static char[][] digitPair = { { '1', '1' }, { '8', '8' }, { '6', '9' }, { '9', '6' } };

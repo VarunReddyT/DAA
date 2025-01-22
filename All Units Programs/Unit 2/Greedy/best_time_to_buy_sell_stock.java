@@ -1,6 +1,8 @@
-package Greedy;
 import java.util.*;
 
+/*
+ * T(n)=O(n)
+ */
 public class best_time_to_buy_sell_stock{
     public static int calculateProfit(String[] prices){
         int minPrice = Integer.MAX_VALUE;

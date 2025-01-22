@@ -1,4 +1,12 @@
 import java.util.*;
+
+/*
+ * O(nlogL)
+ 
+    where:
+    n is the number of strings in the array.
+    L is the length of the smallest string.
+ */
 public class longest_common_prefix{
     private static String smallestString(String[] arr ){
         String smallest = arr[0];

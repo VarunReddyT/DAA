@@ -1,4 +1,8 @@
 import java.util.*;
+
+/*
+ * T(n)=O(m*n*logm)
+ */
 public class smallest_common_element{
 
     public static int binarySearch(int[] arr, int target, int low, int high){

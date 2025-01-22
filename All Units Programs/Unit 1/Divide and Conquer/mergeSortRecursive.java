@@ -1,4 +1,11 @@
 import java.util.*;
+
+/*
+ * T(n)=2T(n/2)+O(n)
+ 
+ * T(n)=O(nlogn)
+ * 
+ */
 public class mergeSortRecursive{
 
     public static void merge(int[] arr, int low, int high){

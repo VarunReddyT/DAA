@@ -1,5 +1,8 @@
-package Greedy;
 import java.util.*;
+
+/*
+ * T(n)=O(ElogE)
+ */
 class Edge{
     int src, dest, weight;
     Edge(int src, int dest, int weight){

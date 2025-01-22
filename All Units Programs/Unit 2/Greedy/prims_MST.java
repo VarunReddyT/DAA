@@ -1,5 +1,8 @@
-package Greedy;
 import java.util.*;
+
+/*
+ * T(n)=O(n^2)
+ */
 
 class Pair{
     int vertex;

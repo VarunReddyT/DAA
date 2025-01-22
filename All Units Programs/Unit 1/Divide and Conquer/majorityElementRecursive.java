@@ -1,5 +1,15 @@
 import java.util.*;
 
+/*
+ * At each level of recursion:
+ *   The array is divided into two parts.
+ *  Two recursive calls are made.
+ *  The count function runs in 𝑂(𝑛)
+ * T(n)=2T(n/2)+O(n)
+ 
+ * T(n)=O(nlogn)
+ * 
+ */
 public class majorityElementRecursive{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

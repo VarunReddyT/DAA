@@ -1,5 +1,8 @@
-package Greedy;
 import java.util.*;
+
+/*
+ * T(n)=O(n)
+ */
 public class min_product_sub_array{
     public static int minProd(int n, Scanner sc){
         int product = 1;

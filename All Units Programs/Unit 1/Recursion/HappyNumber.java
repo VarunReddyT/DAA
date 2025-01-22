@@ -1,6 +1,8 @@
-package Recursion;
 import java.util.*; 
 
+/*
+ * T(n)=O(logn)
+ */
 public class HappyNumber {
     static public boolean isHappy(int n,ArrayList<Integer> arr){
         if(n==1){

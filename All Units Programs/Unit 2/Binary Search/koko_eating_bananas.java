@@ -1,4 +1,11 @@
 import java.util.*;
+
+/*
+ * O(nlogR)
+    where:
+    n is the number of piles,
+    R is the maximum number of bananas in a pile.
+ */
 public class koko_eating_bananas{
     public static int binarySearch(int[] arr, int hours){
         int left = 1;

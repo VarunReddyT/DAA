@@ -1,5 +1,9 @@
-package Recursion;
 import java.util.*;
+
+/*
+ * T(n)=T(n−1)+T(n−2)+O(1)
+ * O(2^n)
+ */
 
 public class ClimbingStairs {
     static int ClimbStairs(int n) {
