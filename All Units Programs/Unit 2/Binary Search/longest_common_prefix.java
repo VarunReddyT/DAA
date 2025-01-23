@@ -44,13 +44,10 @@ public class longest_common_prefix{
         return true;
     }
     public static void main(String[] args) {
-        
         Scanner sc  = new Scanner(System.in);
         String arr[] = sc.nextLine().split(" ");
         String small  = commonPref(arr);
         System.out.println(small);
-
         sc.close();
-
     }
 }
