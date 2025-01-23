@@ -1,7 +1,7 @@
+import java.util.*;
 /*
  * T(n)=O(n^2)
  */
-import java.util.*;
 
 class LRS {
     public int longestRepeatingSubstring(String s) {
